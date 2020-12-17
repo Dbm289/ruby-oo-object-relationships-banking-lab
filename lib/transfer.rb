@@ -1,3 +1,5 @@
+require 'pry'
+
 class Transfer
   
   attr_accessor :amount, :sender, :receiver, :status
@@ -13,7 +15,19 @@ class Transfer
   end
 
   def valid?
-    @sender = "open" && @receiver == "open"
+    #binding.pry
+    @sender.valid?
+    @receiver.valid?
+
+  end
+
+  def execute_transaction
+    deposit
+
+
+  end
+
+  def reverse_transfer
 
   end
 
